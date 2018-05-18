@@ -1,4 +1,5 @@
 var button = document.getElementById("button");
+
 function myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -34,17 +35,17 @@ var numBoxes = 50;
 var container = document.getElementById("boxContainer");
 
 // Dynamically create the boxes
-for(var i = 0; i < numBoxes; i++){
+for (var i = 0; i < numBoxes; i++) {
     var elem = document.createElement("div");
     elem.className = "box";
     elem.id = "box" + i;
     container.appendChild(elem);
-    boxes[i] = new Box(Math.random()*350,
-                       Math.random()*350,
-                       Math.random(),
-                       Math.random(),
-                       '#'+Math.floor(Math.random()*16777215).toString(16),
-                       elem.id);
+    boxes[i] = new Box(Math.random() * 350,
+        Math.random() * 350,
+        Math.random(),
+        Math.random(),
+        '#' + Math.floor(Math.random() * 16777215).toString(16),
+        elem.id);
 }
 
 var id = setInterval(frame, 5);

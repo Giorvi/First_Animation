@@ -1,4 +1,3 @@
-
 @keyframes animateG {
     0% {
         background-color: pink;
@@ -135,6 +134,7 @@
     outline-offset: 0.5rem;
     background-image: url("Space.jpg");
 }
+
 #GContainer {
 
     width: 500px;
