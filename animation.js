@@ -89,9 +89,11 @@ function frame() {
 function collideBorder() {
 
     for (var i = 0; i < boxes.length; i++) {
+
         if (boxes[i].xpos > 450 || boxes[i].xpos < 0) {
             boxes[i].xstep = -boxes[i].xstep;
         }
+
         if (boxes[i].ypos > 450 || boxes[i].ypos < 0) {
             boxes[i].ystep = -boxes[i].ystep;
         }
@@ -141,7 +143,6 @@ document.addEventListener("click", spinFaster);
 
 function spinFaster(MouseEvent) {
     for (var i = 0; i < boxes.length; i++) {
-
         speed = speed - .2;
         boxes[i].style.animationDuration = speed + "s";
     }
