@@ -190,7 +190,7 @@
     top: 0px;
     left: 0px;
     animation-name: spin;
-    animation-duration: .1s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
 }
 .box:hover {
@@ -213,9 +213,17 @@
     background-color: white;
 }
 
-h1 {
+#title {
 
     color: white;
-    font: 1rem sans-serif;
+    font: sans-serif;
+    font-size: 50;
 
+}
+
+#instructions {
+
+    color: white;
+    font: sans-serif;
+    font-size: 20;
 }
