@@ -137,13 +137,15 @@ function movesnake(event) {
     }
 }
 
-var speed = 1;
+container.addEventListener("click", moveBees);
 
-document.addEventListener("click", spinFaster);
 
-function spinFaster(MouseEvent) {
-    for (var i = 0; i < boxes.length; i++) {
-        speed = speed - .2;
-        boxes[i].style.animationDuration = speed + "s";
-    }
+function moveBees(event) {
+
+        var xPosition = event.clientX - boxContainer.getBoundingClientRect().left - (box.clientWidth / 2);
+        var yPosition = event.clientY - boxContainer.getBoundingClientRect().top - (box.clientHeight / 2);
+        // in case of a wide border, the boarder-width needs to be considered in the formula above
+        box.style.left = xPosition + "px";
+        box.style.top = yPosition + "px";
+
 }

@@ -196,13 +196,7 @@
 
 .box:hover {
     transform: scale(3);
-        transform: rotate(360deg);
-
 }
-
-.box:active {
-}
-
 
 #myDIV {
 
