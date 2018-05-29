@@ -141,10 +141,8 @@ document.addEventListener("click", spinFaster);
 
 function spinFaster(MouseEvent) {
     for (var i = 0; i < boxes.length; i++) {
-        if (MouseEvent.altKey === true) {
-            speed = speed - .2;
-            boxes[i].style.animationDuration = speed + "s";
 
-        }
+        speed = speed - .2;
+        boxes[i].style.animationDuration = speed + "s";
     }
 }
