@@ -18,6 +18,7 @@ function Box(xpos, ypos, xstep, ystep, id) {
     this.xstep = xstep;
     this.ystep = ystep;
     this.id = id;
+
     var elem = document.getElementById(this.id);
     this.render = function () {
         elem.style.top = this.ypos + 'px';
@@ -58,6 +59,10 @@ function Box(xpos, ypos, xstep, ystep, id) {
         if (direction === "upright") {
             this.xstep = -2;
             this.ystep = 2;
+        }
+        if (direction === "stop") {
+            this.xstep = 0;
+            this.ystep = 0;
         }
 
     }
@@ -103,10 +108,10 @@ function collideBorder() {
         boxes[i].render();
     }
 }
-window.addEventListener("keypress", movesnake);
+window.addEventListener("keypress", moveBees);
 
 
-function movesnake(event) {
+function moveBees(event) {
 
     for (var i = 0; i < boxes.length; i++) {
 
@@ -134,18 +139,18 @@ function movesnake(event) {
         if (event.key === "c") {
             boxes[i].changeDirection("downright");
         }
+        if (event.key === "h") {
+            boxes[i].changeDirection("stop");
+        }
     }
 }
 
-container.addEventListener("click", moveBees);
+
+var css = document.styleSheets[0];
+
+document.getElementById("container").addEventListener("click", speedUp);
 
 
-function moveBees(event) {
-
-        var xPosition = event.clientX - boxContainer.getBoundingClientRect().left - (box.clientWidth / 2);
-        var yPosition = event.clientY - boxContainer.getBoundingClientRect().top - (box.clientHeight / 2);
-        // in case of a wide border, the boarder-width needs to be considered in the formula above
-        box.style.left = xPosition + "px";
-        box.style.top = yPosition + "px";
-
+function speedUp() {
+css.cssRules[9].style.animationDuration = ".1s"
 }
